@@ -1,23 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- daisy ui + tailwindcss  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Green Earth</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav>
-            <h3>Green Earth</h3>
-            <div>
-                <ul>
-                    <li>About</li>
-                    <li>Gallery</li>
-                    <li>plant a Tree</li>
-                </ul>
+        <!-- nav section style  -->
+      <nav
+        class="flex justify-between items-center bg-[#15803D] px-2 text-white md:px-20 p-3"
+      >
+        <h3 class="text-xl">Green Earth</h3>
+        <div>
+          <ul class="text-sm  md:flex space-x-7 ">
+            <li>About</li>
+            <li>Gallery</li>
+            <li>plant a Tree</li>
+          </ul>
+        </div>
+        <button class="bg-[#FACC15] px-3 p-2 rounded-full text-[#15803D]">
+          plant a Tree
+        </button>
+      </nav>
+      <!-- hero section style  -->
+       <section >
+            <div class="px-3  bg-[#CFF0DC] md:flex justify-between items-center ">
+                <img class="hidden md:inline" src="./assets/hero-leaf1.png" alt="">
+                <div class="text-center space-y-3 py-5">
+                    <h1 class="text-[#1F2937] text-4xl font-s">Plant a Tree, Grow a Future</h1>
+                    <p>
+                        Join our mission to plant 1 million trees and make the Earth greener
+                        for future generations.
+                    </p>
+                    <button class="bg-[#FACC15] px-3 p-2 rounded-full text-[#15803D] mt-2">
+                        Get Involved
+                    </button>
+                </div>
+                <img class="hidden md:inline" src="./assets/hero-leaf2.png" alt="">
             </div>
-            <button>plant a Tree</button>
-        </nav>
+        </section>
     </header>
-</body>
+    <main>
+        <section>
+
+        </section>
+    </main>
+  </body>
 </html>
