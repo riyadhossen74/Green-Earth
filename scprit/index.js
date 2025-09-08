@@ -18,12 +18,12 @@ const trees = () => {
       console.log(tree);
       allTrees.innerHTML += `
         <div class="bg-white p-5">
-                        <img class=" mx-auto rounded-xl" src="${tree.image}">
+                        <img class=" mx-auto rounded-xl h-[400px]" src="${tree.image}">
                         <h2 onclick="lodeModul(${tree.id})" class="font-semibold mt-2 text-xl">${tree.name}</h2>
                         <p class="text-sm my-2">${tree.description}</p>
                         <div class="flex justify-between mt-5">
                             <button class="bg-[#DCFCE7] p-1 px-3 text-[#15803D] rounded-full">Fruit Tree</button>
-                            <p class="font-semibold text-xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>500</span></p>
+                            <p class="font-semibold text-xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>${tree.price}</span></p>
                             </div>
                             <button class="bg-[#15803D] text-white w-full mt-5 py-2 rounded-full">Add to Cart</button>
                     </div>
@@ -74,12 +74,12 @@ const lodeCatagory = (plants) => {
   plants.forEach((pl) => {
     allTrees.innerHTML += `
      <div class="bg-white p-5">
-                        <img class=" mx-auto rounded-xl" src="${pl.image}">
+                        <img class=" mx-auto rounded-xl h-[400px]" src="${pl.image}">
                         <h2 onclick="lodeModul(${pl.id})" class="font-semibold mt-2 text-xl">${pl.name}</h2>
                         <p class="text-sm my-2">${pl.description}</p>
                         <div class="flex justify-between mt-5">
                             <button class="bg-[#DCFCE7] p-1 px-3 text-[#15803D] rounded-full">Fruit Tree</button>
-                            <p class="font-semibold text-xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>500</span></p>
+                            <p class="font-semibold text-xl"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>${pl.price}</span></p>
                             </div>
                             <button id="cartBtn" class="bg-[#15803D] text-white w-full mt-5 py-2 rounded-full">Add to Cart</button>
                     </div>
@@ -119,6 +119,7 @@ allTrees.addEventListener("click", (e) => {
 
     const price =
       e.target.parentNode.children[3].children[1].children[1].innerText;
+      alert(titel + " " + "has been added")
     leftCart.innerHTML += `
     <div class="flex justify-between items-center mx-5 mt-4">
                         <div>
@@ -128,6 +129,9 @@ allTrees.addEventListener("click", (e) => {
                       <p class="mt-4"><i class="fa-solid fa-xmark"></i></p>
                       </div>
     `;
+    const addedPrice = Number(document.getElementById("taka").innerText) ;
+    const totalPrice = addedPrice + Number(price);
+    document.getElementById("taka").innerText = totalPrice;
   }
 });
 

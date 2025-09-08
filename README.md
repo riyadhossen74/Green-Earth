@@ -1,18 +1,10 @@
-category
-: 
-"Ornamental Plant"
-description
-: 
-"A decorative palm with large, fan-shaped leaves. Suitable for both indoor decoration and garden landscapes."
-id
-: 
-21
-image
-: 
-"https://i.ibb.co.com/8gqbH5LC/fan-palm-min.jpg"
-name
-: 
-"Fan Palm"
-price
-: 
-900
+ const prices = document.getElementsByClassName("takaAD").innerText
+    const addedPrice = document.getElementById("taka").innerText
+    const totalPrice = Number(price + addedPrice)
+    addedPrice = totalPrice.innerText
+
+
+
+    const addedPrice = Number(document.getElementById("taka").innerText) || 0;
+    const totalPrice = addedPrice + Number(price);
+    document.getElementById("taka").innerText = totalPrice;
