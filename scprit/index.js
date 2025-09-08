@@ -116,6 +116,8 @@ allTrees.addEventListener("click", (e) => {
   // console.log(e.target.innerText)
   if (e.target.innerText === "Add to Cart") {
     const titel = e.target.parentNode.children[1].innerText;
+    
+   
 
     const price =
       e.target.parentNode.children[3].children[1].children[1].innerText;
@@ -124,9 +126,9 @@ allTrees.addEventListener("click", (e) => {
     <div class="flex justify-between items-center mx-5 mt-4">
                         <div>
                         <h3 class="text-xl ">${titel}</h3>
-                      <p class="text-sm text-gray-500 mt-2"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>${price}</span></p>
+                      <p class="text-sm text-gray-500 mt-2"><i class="fa-solid fa-bangladeshi-taka-sign"></i><span>${price} × 1</span></p>
                       </div>
-                      <p class="mt-4"><i class="fa-solid fa-xmark"></i></p>
+                      <p  class="mt-4"><i class="fa-solid fa-xmark"></i></p>
                       </div>
     `;
     const addedPrice = Number(document.getElementById("taka").innerText) ;
@@ -134,6 +136,7 @@ allTrees.addEventListener("click", (e) => {
     document.getElementById("taka").innerText = totalPrice;
   }
 });
+
 
 // all tree mark
 
