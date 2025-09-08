@@ -2,7 +2,7 @@ const allTrees = document.getElementById("all-Tree");
 const sideBar = document.getElementById("side-bar");
 const items = document.getElementById("leftCart");
 const leftCart = document.getElementById("leftCart");
-const show = document.getElementById("shows")
+const show = document.getElementById("shows");
 // all tree
 const trees = () => {
   fetch("https://openapi.programming-hero.com/api/plants")
@@ -88,30 +88,28 @@ const lodeCatagory = (plants) => {
 };
 // modul
 const lodeModul = (id) => {
-  fetch(`https://openapi.programming-hero.com/api/category/${id}`)
+  fetch(`https://openapi.programming-hero.com/api/plant/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      showModuls(data.plants)
+      showModuls(data.plants);
     });
 };
 
-  const showModuls = (plants) => {
-   
-   show.innerHTML = ""
-    plants.forEach((pls) => {
-      console.log(pls)
-      show.innerHTML +=   `
-      <h3>${pls.name}</h3>
-      <img src="${pls.image}" alt="">
-      <p>Category: ${pls.category}</p>
-      <p>Price: <span>${pls.price}</span></p>
-      <p>Descrption: ${pls.description}</p>
+const showModuls = (plants) => {
+  show.innerHTML = "";
+
+  console.log(plants);
+  show.innerHTML += `
+      <h3 class="text-center font-semibold text-2xl pb-3">${plants.name}</h3>
+      <img class="h-[350px] w-full mx-auto" src="${plants.image}" alt="">
+      <p>Category: ${plants.category}</p>
+      <p>Price: <span>${plants.price}</span></p>
+      <p>Descrption: ${plants.description}</p>
       
       `;
-      
-    })
-    document.getElementById('my_modal_5').showModal()
-  }
+
+  document.getElementById("my_modal_5").showModal();
+};
 
 // left cart add
 allTrees.addEventListener("click", (e) => {
